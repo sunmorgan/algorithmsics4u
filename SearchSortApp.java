@@ -114,14 +114,14 @@ public class SearchSortApp {
 
 				// Run the selected algorithm; not that some algorithms may require additional arguments
 				if (algorithm == 1)
-					SortMmethods.bubbleSort(list);
+					SortMethods.bubbleSort(list);
 				else if (algorithm == 2)
 					SortMethods.selectionSort(list);
 				else if (algorithm == 3)
 					SortMethods.insertionSort(list);
 
 				// Displaus the elapsed time and the result of the sort
-				System.out.printf("Elapsed time: %d nanoseconds\n", System.nanotime() - start);
+				System.out.printf("Elapsed time: %d nanoseconds\n", System.nanoTime() - start);
 
 				// Limit console output to only smaller data sets
 				if (size <= 25)
