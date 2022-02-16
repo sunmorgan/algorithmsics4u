@@ -5,10 +5,21 @@ public class SearchMethods {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
-		
+			
 
 	}
+	
+	public static int linearSearch(int[] data, int item) {
+		
+	for(int x = 0; x < data.length; x++)
+			
+		if (data[x] == item)
+			return x;
+		
+	return -1;
+		
+	}
+
 	
 	public static int exponentialSearch(int [] data, int searchNum) {
 		if(data[0] == searchNum) {
