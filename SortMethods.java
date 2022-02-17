@@ -5,6 +5,28 @@ public class SortMethods {
 	public static void main(String[] args) {
 	}
 	
+	public static void bubbleSort(int[] data) {
+
+		for (int x = data.length - 1; x > 0; x--) {
+
+			boolean swapped = false;
+
+			for (int y = 0; y < x; y ++)
+
+				if(data[y] > data[y+1]) {
+					swap(data, y, y+1);
+					swapped = true;
+
+				}
+
+			if (!swapped)
+				break;
+
+		}
+
+	}
+
+	
 	public static void insertionSort(int [] data) {
 		//checking using a single index value 
 		for(int x = 1; x<data.length;x++) {
