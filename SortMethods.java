@@ -75,4 +75,41 @@ public class SortMethods {
 		data [x] = data[y];
 		data[y] = temp;
 	}
+	//bucket sort algorithm
+	public static void bucketSort(int [] data, int range) {
+		//to find the number of buckets needed 
+		int numBuckets = (int) Math.sqrt(range)+1;
+		//make an array of each buckets 
+		ArrayList <Integer>[] bucket = new ArrayList[numBuckets];
+		
+		//create an arraylist inside each bucket 
+		for(int x = 0; x<numBuckets; x++) {
+			bucket[x] = new ArrayList<Integer>();
+		}
+		
+		//add each number from data array into the bucket 
+		for(int x = 0; x<data.length; x++) {
+			//dividing it by number of buckets to know which bucket it belongs to 
+			bucket[data[x]/numBuckets].add(data[x]);	
+		}
+		int index = 0;
+		//loop through each bucket
+		for(int j = 0; j<numBuckets;j++) {
+			//if the arraylist inside that bucket has numbers, meaning
+			//that there's numbers in that bucket, perform insertion on each individual bucket 
+			if(bucket[j].size()>0) {
+				//use a temporary bucket for new order 
+				int [] tempBucket = new int [bucket[j].size()];
+				for(int y = 0; y<tempBucket.length;y++) {
+					//get each value from the arraylist to fill the temporary bucket
+					tempBucket[y] = bucket[j].get(y);
+				}
+				insertionSort(tempBucket);
+				//put the tempBucket into the actual data (replace the numbers) 
+				for(int y= 0; y<tempBucket.length;y++) {
+					data[index++] = tempBucket[y];
+				}
+				
+			}
+		}		
 }
