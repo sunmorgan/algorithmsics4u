@@ -1,5 +1,5 @@
 package algorithm;
-import java.util.Arrays;
+import java.util.Arrays;3
 import java.util.Scanner;
 public class SearchMethods {
 
